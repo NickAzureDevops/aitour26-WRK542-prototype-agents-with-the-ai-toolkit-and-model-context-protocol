@@ -1,62 +1,10 @@
-# Welcome AI Tour 26 Creators!
-
-Thanks for creating content for AI Tour 26.
-
-One of our opportunities from FY25 was make a more consistent experience for attendees.  Following this template, and keeping users in these repos, will help us achieve this opportunity for this year's AI Tour.
-
-Steps:
-
-## Docs using MKDocs
-If you are interested in using mkdocs, this repo is configured for it.
-1. update the `mkdocs.yml` file to reference your session. Look particularly for the `site_name`, `site_author`, and `repo_name` tags.
-1. Subfolders in the docs folder will show up as tabs in the navigation bar.
-
-If you want to disable mkdocs:
-1. Delete the mkdocs.yml file. 
-1. Delete the references to it in [docs/README.md](./docs/README.md)
-1. Delete the docs/assets folder and its contents.
-
-## Other folders
-Note the data, docs, src, lab, session-delivery-resources folders. 
-1. Remove folders that you dont need.
-1. Please keep and use the folders that you do need.  e.g. put your data in the data folder, and put your docs in the docs folder.
-
-## Update Readme
-1. Fill out the content below in this file, below the banner graphic.
-
-## Update Repo Info
-
-1. Note the data, docs, src, lab, session-delivery-resources folders. 
-
-    1. Remove folders that you dont need, but please keep and use the folders that you do need.  e.g. put your data in the data folder, and put your docs in the docs folder.
-
-1. Fill out the content below in this file, below the banner graphic.
-
-1. Update the Repo Info for this repo 
-    1. Click the gear icon⚙️ in the upper right.
-    1. Set a good description of this repo.
-    1. Add the technologies that you're using in this session.  E.g. the same items that are in the Technologies Used section below.
-
-1. Please embed links to Learn with your campaign codes!
-
-## Slides and Recordings
-1. Do not store slides or recordings in this repo
-1. We will implement a similar solution to last year's with azure blob storage. When the time comes, link to these from the session-delivery-resources folder readme.
-
-## Questions?
-Send them to Mike Kinsman, Erik Weis, and cc Anthony Bartolo, or surface through your content lead.
-
-## Last step
-Delete this line and everything above it!
-
-
 <p align="center">
 <img src="img/Banner-MS-AI-Tour-26.png" alt="decorative banner" width="1200"/>
 </p>
 
 # [Microsoft AI Tour 2026](https://aitour.microsoft.com)
 
-## 🔥BRKXXX: Prototype Agents with the AI Toolkit and Model Context Protocol
+## 🔥WRK540B: Prototype Agents with the AI Toolkit and Model Context Protocol (MCP)
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/Pwpvf3TWaw)](https://aka.ms/MicrosoftFoundryDiscord-AITour26)
 [![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=adff2f&logoColor=fff)](https://aka.ms/MicrosoftFoundryForum-AITour26)
@@ -65,22 +13,22 @@ If you will be delivering this session, check the [session-delivery-sources](./s
 
 ### Session Description
 
-*Add Session Description*
-
+Learn how to build a conversational AI agent in VS Code using the AI toolkit, Microsoft Foundry and the Model Context Protocol (MCP). You'll explore and compare models to find the best fit for your agent, configure its instructions and enable sales analysis and product inventory management.
 
 ### 🧠 Learning Outcomes
 
 By the end of this session, learners will be able to:
 
--  
--
--
+-  Explore and compare models to select the best fit for their business scenario
+-  Augment models with prompts and data to get more accurate and grounded responses 
+-  Prototype an agent by combining models and instructions with tools via MCP (Model Context Protocol)
 
 ### 💻 Technologies Used
 
-1.
-1.
-1.
+1. [AI toolkit for Visual Studio Code](https://code.visualstudio.com/docs/intelligentapps/overview)
+1. [GitHub models](https://github.com/features/models)
+1. [Microsoft Foundry Models](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/foundry-models-overview)
+1. [MCP - Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro)
 
 ### 🔗 Session Resources
 | Resources          | Links                             | Description        |
@@ -96,7 +44,7 @@ By the end of this session, learners will be able to:
 
 ### 🌐 Multi-Language Support
 
-*languages will go here when its time to localize*
+*Coming soon*
 
 ## Content Owners
 
@@ -108,23 +56,21 @@ By the end of this session, learners will be able to:
 
 <table>
 <tr>
-    <td align="center"><a href="http://github.com/mikekinsman">
-        <img src="https://github.com/mikekinsman.png" width="100px;" alt="INSERT NAME HERE"
-"/><br />
-        <sub><b> INSERT NAME HERE
+    <td align="center"><a href="http://github.com/gloveboxes">
+        <img src="https://github.com/gloveboxes.png" width="100px;" alt="Dave Glover"
+/><br />
+        <sub><b>Dave Glover (Python)
 </b></sub></a><br />
-            <a href="https://github.com/mikekinsman" title="talk">📢</a> 
+            <a href="https://github.com/gloveboxes" title="talk">📢</a>
     </td>
-    <td align="center"><a href="http://github.com/mikekinsman">
-        <img src="https://github.com/mikekinsman.png" width="100px;" alt="INSERT NAME HERE
-"/><br />
-        <sub><b>INSERT NAME HERE
-</b></sub></a><br />
-            <a href="https://github.com/mikekinsman" title="talk">📢</a> 
+<tr>
+ <td align="center"><a href="http://github.com/carlotta94c">
+        <img src="https://github.com/carlotta94c.png" width="100px;" alt="Carlotta Castelluccio"/><br />
+        <sub><b>Carlotta Castelluccio</b></sub></a><br />
+            <a href="https://github.com/carlotta94c" title="talk">📢</a> 
     </td>
-</tr></table>
-
-## 
+</tr>
+</table>
 
 ## Responsible AI 
 
