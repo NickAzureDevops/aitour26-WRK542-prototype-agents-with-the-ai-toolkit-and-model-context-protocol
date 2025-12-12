@@ -4,7 +4,7 @@
 
 # [Microsoft AI Tour 2026](https://aitour.microsoft.com)
 
-## 🔥WRK540B: Prototype Agents with the AI Toolkit and Model Context Protocol (MCP)
+## 🔥WRK542: Prototype Agents with the AI Toolkit and Model Context Protocol (MCP)
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/Pwpvf3TWaw)](https://aka.ms/MicrosoftFoundryDiscord-AITour26)
 [![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=adff2f&logoColor=fff)](https://aka.ms/MicrosoftFoundryForum-AITour26)
