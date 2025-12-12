@@ -1,0 +1,3 @@
+pydantic
+aiosqlite<0.21.0,>=0.20.0
+sqlalchemy[asyncio]<3.0.0,>=2.0.0

@@ -1,0 +1,582 @@
+{
+    "1": {
+        "supplier_id": 1,
+        "supplier_code": "SUP001",
+        "supplier_name": "ProBuild Materials Wholesale",
+        "contact_email": "michael.chen@probuild.com",
+        "contact_phone": "+1-206-555-0101",
+        "rating": 4.8,
+        "esg_compliant": true,
+        "approved_vendor": true,
+        "preferred_vendor": true,
+        "lead_time_days": 10,
+        "min_order_amount": 1000.0,
+        "contracts": [
+            {
+                "end_date": "2027-03-18",
+                "auto_renew": false,
+                "start_date": "2024-01-01",
+                "contract_id": 1,
+                "payment_terms": "Net 30",
+                "contract_value": 600000,
+                "contract_number": "2024-UTWX-001",
+                "contract_status": "active",
+                "contract_created": "2025-10-15T21:46:16.361243",
+                "renewal_due_soon": false,
+                "days_until_expiry": 519
+            }
+        ],
+        "bulk_discount_percent": 10.0
+    },
+    "2": {
+        "supplier_id": 2,
+        "supplier_code": "SUP002",
+        "supplier_name": "National Hardware Distributors",
+        "contact_email": "sarah.j@nationalhardware.com",
+        "contact_phone": "+1-425-555-0102",
+        "rating": 4.5,
+        "esg_compliant": true,
+        "approved_vendor": true,
+        "preferred_vendor": true,
+        "lead_time_days": 12,
+        "min_order_amount": 800.0,
+        "contracts": [
+            {
+                "end_date": "2027-01-11",
+                "auto_renew": true,
+                "start_date": "2024-01-01",
+                "contract_id": 2,
+                "payment_terms": "Net 45",
+                "contract_value": 280000,
+                "contract_number": "2024-EFDX-002",
+                "contract_status": "active",
+                "contract_created": "2025-10-15T21:46:16.361243",
+                "renewal_due_soon": false,
+                "days_until_expiry": 453
+            }
+        ],
+        "bulk_discount_percent": 10.0
+    },
+    "3": {
+        "supplier_id": 3,
+        "supplier_code": "SUP003",
+        "supplier_name": "Pacific Lumber & Building Supply",
+        "contact_email": "james@pacificlumber.com",
+        "contact_phone": "+1-253-555-0103",
+        "rating": 3.8,
+        "esg_compliant": true,
+        "approved_vendor": true,
+        "preferred_vendor": false,
+        "lead_time_days": 14,
+        "min_order_amount": 600.0,
+        "contracts": [
+            {
+                "end_date": "2026-11-02",
+                "auto_renew": true,
+                "start_date": "2024-01-01",
+                "contract_id": 3,
+                "payment_terms": "Net 30",
+                "contract_value": 210000,
+                "contract_number": "2024-PAGX-003",
+                "contract_status": "active",
+                "contract_created": "2025-10-15T21:46:16.361243",
+                "renewal_due_soon": false,
+                "days_until_expiry": 383
+            }
+        ],
+        "bulk_discount_percent": 7.0
+    },
+    "4": {
+        "supplier_id": 4,
+        "supplier_code": "SUP004",
+        "supplier_name": "Metro Electrical Supply Co",
+        "contact_email": "e.rodriguez@metroelectrical.com",
+        "contact_phone": "+1-206-555-0104",
+        "rating": 4.2,
+        "esg_compliant": false,
+        "approved_vendor": true,
+        "preferred_vendor": false,
+        "lead_time_days": 18,
+        "min_order_amount": 750.0,
+        "contracts": [
+            {
+                "end_date": "2027-07-25",
+                "auto_renew": true,
+                "start_date": "2024-01-01",
+                "contract_id": 4,
+                "payment_terms": "Net 60",
+                "contract_value": 240000,
+                "contract_number": "2024-MSSC-004",
+                "contract_status": "active",
+                "contract_created": "2025-10-15T21:46:16.361243",
+                "renewal_due_soon": false,
+                "days_until_expiry": 648
+            }
+        ],
+        "bulk_discount_percent": 8.5
+    },
+    "5": {
+        "supplier_id": 5,
+        "supplier_code": "SUP005",
+        "supplier_name": "Northwest Plumbing Wholesale",
+        "contact_email": "david.kim@nwplumbing.com",
+        "contact_phone": "+1-509-555-0105",
+        "rating": 3.9,
+        "esg_compliant": true,
+        "approved_vendor": true,
+        "preferred_vendor": false,
+        "lead_time_days": 15,
+        "min_order_amount": 650.0,
+        "contracts": [
+            {
+                "end_date": "2027-01-25",
+                "auto_renew": true,
+                "start_date": "2024-01-01",
+                "contract_id": 5,
+                "payment_terms": "Net 30",
+                "contract_value": 230000,
+                "contract_number": "2024-NDWX-005",
+                "contract_status": "active",
+                "contract_created": "2025-10-15T21:46:16.361243",
+                "renewal_due_soon": false,
+                "days_until_expiry": 467
+            }
+        ],
+        "bulk_discount_percent": 7.0
+    },
+    "6": {
+        "supplier_id": 6,
+        "supplier_code": "SUP006",
+        "supplier_name": "Premium Paint & Finishes Direct",
+        "contact_email": "lisa.t@premiumpaint.com",
+        "contact_phone": "+1-425-555-0106",
+        "rating": 4.6,
+        "esg_compliant": true,
+        "approved_vendor": true,
+        "preferred_vendor": true,
+        "lead_time_days": 11,
+        "min_order_amount": 900.0,
+        "contracts": [
+            {
+                "end_date": "2027-02-15",
+                "auto_renew": false,
+                "start_date": "2024-01-01",
+                "contract_id": 6,
+                "payment_terms": "Net 45",
+                "contract_value": 370000,
+                "contract_number": "2024-FDIX-006",
+                "contract_status": "active",
+                "contract_created": "2025-10-15T21:46:16.361243",
+                "renewal_due_soon": false,
+                "days_until_expiry": 488
+            }
+        ],
+        "bulk_discount_percent": 10.0
+    },
+    "7": {
+        "supplier_id": 7,
+        "supplier_code": "SUP007",
+        "supplier_name": "Industrial Tool Wholesale",
+        "contact_email": "robert@industrialtool.com",
+        "contact_phone": "+1-425-555-0107",
+        "rating": 4.1,
+        "esg_compliant": false,
+        "approved_vendor": true,
+        "preferred_vendor": false,
+        "lead_time_days": 16,
+        "min_order_amount": 700.0,
+        "contracts": [
+            {
+                "end_date": "2027-03-31",
+                "auto_renew": true,
+                "start_date": "2024-01-01",
+                "contract_id": 7,
+                "payment_terms": "Net 30",
+                "contract_value": 400000,
+                "contract_number": "2024-CFWX-007",
+                "contract_status": "active",
+                "contract_created": "2025-10-15T21:46:16.361243",
+                "renewal_due_soon": false,
+                "days_until_expiry": 532
+            }
+        ],
+        "bulk_discount_percent": 8.5
+    },
+    "8": {
+        "supplier_id": 8,
+        "supplier_code": "SUP008",
+        "supplier_name": "Garden & Outdoor Supply Ltd",
+        "contact_email": "j.lee@gardenoutdoor.com",
+        "contact_phone": "+1-206-555-0108",
+        "rating": 3.5,
+        "esg_compliant": false,
+        "approved_vendor": true,
+        "preferred_vendor": false,
+        "lead_time_days": 20,
+        "min_order_amount": 500.0,
+        "contracts": [
+            {
+                "end_date": "2027-05-24",
+                "auto_renew": false,
+                "start_date": "2024-01-01",
+                "contract_id": 8,
+                "payment_terms": "Net 30",
+                "contract_value": 80000,
+                "contract_number": "2024-PALX-008",
+                "contract_status": "active",
+                "contract_created": "2025-10-15T21:46:16.361243",
+                "renewal_due_soon": false,
+                "days_until_expiry": 586
+            }
+        ],
+        "bulk_discount_percent": 7.0
+    },
+    "9": {
+        "supplier_id": 9,
+        "supplier_code": "SUP009",
+        "supplier_name": "Global Hardware Imports Co",
+        "contact_email": "chris.w@globalhardware.com",
+        "contact_phone": "+1-425-555-0109",
+        "rating": 3.2,
+        "esg_compliant": false,
+        "approved_vendor": false,
+        "preferred_vendor": false,
+        "lead_time_days": 25,
+        "min_order_amount": 450.0,
+        "contracts": [
+            {
+                "end_date": "2026-11-18",
+                "auto_renew": true,
+                "start_date": "2024-01-01",
+                "contract_id": 9,
+                "payment_terms": "Net 45",
+                "contract_value": 200000,
+                "contract_number": "2024-GHCX-009",
+                "contract_status": "active",
+                "contract_created": "2025-10-15T21:46:16.361243",
+                "renewal_due_soon": false,
+                "days_until_expiry": 399
+            }
+        ],
+        "bulk_discount_percent": 5.5
+    },
+    "10": {
+        "supplier_id": 10,
+        "supplier_code": "SUP010",
+        "supplier_name": "Fastener Solutions Wholesale",
+        "contact_email": "amanda@fastenersolutions.com",
+        "contact_phone": "+1-253-555-0110",
+        "rating": 4.3,
+        "esg_compliant": true,
+        "approved_vendor": true,
+        "preferred_vendor": false,
+        "lead_time_days": 13,
+        "min_order_amount": 850.0,
+        "contracts": [
+            {
+                "end_date": "2027-01-28",
+                "auto_renew": true,
+                "start_date": "2024-01-01",
+                "contract_id": 10,
+                "payment_terms": "Net 30",
+                "contract_value": 220000,
+                "contract_number": "2024-AWSX-010",
+                "contract_status": "active",
+                "contract_created": "2025-10-15T21:46:16.361243",
+                "renewal_due_soon": false,
+                "days_until_expiry": 470
+            }
+        ],
+        "bulk_discount_percent": 8.5
+    },
+    "11": {
+        "supplier_id": 11,
+        "supplier_code": "SUP011",
+        "supplier_name": "Storage & Organization Imports",
+        "contact_email": "thomas.brown@storageimports.com",
+        "contact_phone": "+1-206-555-0111",
+        "rating": 4.4,
+        "esg_compliant": true,
+        "approved_vendor": true,
+        "preferred_vendor": false,
+        "lead_time_days": 14,
+        "min_order_amount": 800.0,
+        "contracts": [
+            {
+                "end_date": "2026-12-12",
+                "auto_renew": true,
+                "start_date": "2024-01-01",
+                "contract_id": 11,
+                "payment_terms": "Net 60",
+                "contract_value": 330000,
+                "contract_number": "2024-COIX-011",
+                "contract_status": "active",
+                "contract_created": "2025-10-15T21:46:16.361243",
+                "renewal_due_soon": false,
+                "days_until_expiry": 423
+            }
+        ],
+        "bulk_discount_percent": 8.5
+    },
+    "12": {
+        "supplier_id": 12,
+        "supplier_code": "SUP012",
+        "supplier_name": "Construction Supplies Wholesale",
+        "contact_email": "patricia@constructionsupplies.com",
+        "contact_phone": "+1-425-555-0112",
+        "rating": 3.6,
+        "esg_compliant": false,
+        "approved_vendor": true,
+        "preferred_vendor": false,
+        "lead_time_days": 17,
+        "min_order_amount": 550.0,
+        "contracts": [
+            {
+                "end_date": "2027-10-13",
+                "auto_renew": false,
+                "start_date": "2024-01-01",
+                "contract_id": 12,
+                "payment_terms": "Net 30",
+                "contract_value": 100000,
+                "contract_number": "2024-SHWX-012",
+                "contract_status": "active",
+                "contract_created": "2025-10-15T21:46:16.361243",
+                "renewal_due_soon": false,
+                "days_until_expiry": 728
+            }
+        ],
+        "bulk_discount_percent": 7.0
+    },
+    "13": {
+        "supplier_id": 13,
+        "supplier_code": "SUP013",
+        "supplier_name": "Professional Tool Distributors",
+        "contact_email": "daniel.white@professionaltool.com",
+        "contact_phone": "+1-509-555-0113",
+        "rating": 4.0,
+        "esg_compliant": true,
+        "approved_vendor": true,
+        "preferred_vendor": false,
+        "lead_time_days": 15,
+        "min_order_amount": 700.0,
+        "contracts": [
+            {
+                "end_date": "2027-09-25",
+                "auto_renew": false,
+                "start_date": "2024-01-01",
+                "contract_id": 13,
+                "payment_terms": "Net 45",
+                "contract_value": 210000,
+                "contract_number": "2024-BLDX-013",
+                "contract_status": "active",
+                "contract_created": "2025-10-15T21:46:16.361243",
+                "renewal_due_soon": false,
+                "days_until_expiry": 710
+            }
+        ],
+        "bulk_discount_percent": 8.5
+    },
+    "14": {
+        "supplier_id": 14,
+        "supplier_code": "SUP014",
+        "supplier_name": "Building Materials Wholesale",
+        "contact_email": "michelle@buildingmaterials.com",
+        "contact_phone": "+1-425-555-0114",
+        "rating": 4.7,
+        "esg_compliant": true,
+        "approved_vendor": true,
+        "preferred_vendor": true,
+        "lead_time_days": 9,
+        "min_order_amount": 950.0,
+        "contracts": [
+            {
+                "end_date": "2027-01-11",
+                "auto_renew": true,
+                "start_date": "2024-01-01",
+                "contract_id": 14,
+                "payment_terms": "Net 30",
+                "contract_value": 300000,
+                "contract_number": "2024-FFWX-014",
+                "contract_status": "active",
+                "contract_created": "2025-10-15T21:46:16.361243",
+                "renewal_due_soon": false,
+                "days_until_expiry": 453
+            }
+        ],
+        "bulk_discount_percent": 10.0
+    },
+    "15": {
+        "supplier_id": 15,
+        "supplier_code": "SUP015",
+        "supplier_name": "Specialty Hardware Source",
+        "contact_email": "kevin@specialtyhardware.com",
+        "contact_phone": "+1-253-555-0115",
+        "rating": 3.7,
+        "esg_compliant": false,
+        "approved_vendor": true,
+        "preferred_vendor": false,
+        "lead_time_days": 19,
+        "min_order_amount": 600.0,
+        "contracts": [
+            {
+                "end_date": "2027-08-21",
+                "auto_renew": true,
+                "start_date": "2024-01-01",
+                "contract_id": 15,
+                "payment_terms": "Net 45",
+                "contract_value": 180000,
+                "contract_number": "2024-PDSX-015",
+                "contract_status": "active",
+                "contract_created": "2025-10-15T21:46:16.361243",
+                "renewal_due_soon": false,
+                "days_until_expiry": 675
+            }
+        ],
+        "bulk_discount_percent": 7.0
+    },
+    "16": {
+        "supplier_id": 16,
+        "supplier_code": "SUP016",
+        "supplier_name": "Power Tool Network",
+        "contact_email": "ryan.clark@powertoolnetwork.com",
+        "contact_phone": "+1-425-555-0116",
+        "rating": 4.2,
+        "esg_compliant": true,
+        "approved_vendor": true,
+        "preferred_vendor": false,
+        "lead_time_days": 14,
+        "min_order_amount": 750.0,
+        "contracts": [
+            {
+                "end_date": "2027-07-24",
+                "auto_renew": true,
+                "start_date": "2024-01-01",
+                "contract_id": 16,
+                "payment_terms": "Net 30",
+                "contract_value": 200000,
+                "contract_number": "2024-AFNX-016",
+                "contract_status": "active",
+                "contract_created": "2025-10-15T21:46:16.361243",
+                "renewal_due_soon": false,
+                "days_until_expiry": 647
+            }
+        ],
+        "bulk_discount_percent": 8.5
+    },
+    "17": {
+        "supplier_id": 17,
+        "supplier_code": "SUP017",
+        "supplier_name": "Commercial Paint Specialists",
+        "contact_email": "susan.moore@commercialpaint.com",
+        "contact_phone": "+1-206-555-0117",
+        "rating": 3.9,
+        "esg_compliant": false,
+        "approved_vendor": true,
+        "preferred_vendor": false,
+        "lead_time_days": 18,
+        "min_order_amount": 650.0,
+        "contracts": [
+            {
+                "end_date": "2027-09-18",
+                "auto_renew": false,
+                "start_date": "2024-01-01",
+                "contract_id": 17,
+                "payment_terms": "Net 60",
+                "contract_value": 280000,
+                "contract_number": "2024-FWSX-017",
+                "contract_status": "active",
+                "contract_created": "2025-10-15T21:46:16.361243",
+                "renewal_due_soon": false,
+                "days_until_expiry": 703
+            }
+        ],
+        "bulk_discount_percent": 7.0
+    },
+    "18": {
+        "supplier_id": 18,
+        "supplier_code": "SUP018",
+        "supplier_name": "DIY Essentials Collective",
+        "contact_email": "jason@diyessentials.com",
+        "contact_phone": "+1-425-555-0118",
+        "rating": 3.4,
+        "esg_compliant": false,
+        "approved_vendor": false,
+        "preferred_vendor": false,
+        "lead_time_days": 22,
+        "min_order_amount": 480.0,
+        "contracts": [
+            {
+                "end_date": "2027-04-27",
+                "auto_renew": true,
+                "start_date": "2024-01-01",
+                "contract_id": 18,
+                "payment_terms": "Net 30",
+                "contract_value": 110000,
+                "contract_number": "2024-SCXX-018",
+                "contract_status": "active",
+                "contract_created": "2025-10-15T21:46:16.361243",
+                "renewal_due_soon": false,
+                "days_until_expiry": 559
+            }
+        ],
+        "bulk_discount_percent": 5.5
+    },
+    "19": {
+        "supplier_id": 19,
+        "supplier_code": "SUP019",
+        "supplier_name": "Seasonal Garden Supply Co",
+        "contact_email": "karen@seasonalgarden.com",
+        "contact_phone": "+1-509-555-0119",
+        "rating": 4.0,
+        "esg_compliant": true,
+        "approved_vendor": true,
+        "preferred_vendor": false,
+        "lead_time_days": 16,
+        "min_order_amount": 700.0,
+        "contracts": [
+            {
+                "end_date": "2027-06-01",
+                "auto_renew": true,
+                "start_date": "2024-01-01",
+                "contract_id": 19,
+                "payment_terms": "Net 45",
+                "contract_value": 220000,
+                "contract_number": "2024-WWSC-019",
+                "contract_status": "active",
+                "contract_created": "2025-10-15T21:46:16.361243",
+                "renewal_due_soon": false,
+                "days_until_expiry": 594
+            }
+        ],
+        "bulk_discount_percent": 8.5
+    },
+    "20": {
+        "supplier_id": 20,
+        "supplier_code": "SUP020",
+        "supplier_name": "Budget Hardware Wholesale",
+        "contact_email": "mark.j@budgethardware.com",
+        "contact_phone": "+1-253-555-0120",
+        "rating": 3.3,
+        "esg_compliant": false,
+        "approved_vendor": false,
+        "preferred_vendor": false,
+        "lead_time_days": 24,
+        "min_order_amount": 400.0,
+        "contracts": [
+            {
+                "end_date": "2026-12-31",
+                "auto_renew": true,
+                "start_date": "2024-01-01",
+                "contract_id": 20,
+                "payment_terms": "Net 30",
+                "contract_value": 120000,
+                "contract_number": "2024-QBWX-020",
+                "contract_status": "active",
+                "contract_created": "2025-10-15T21:46:16.361243",
+                "renewal_due_soon": false,
+                "days_until_expiry": 442
+            }
+        ],
+        "bulk_discount_percent": 5.5
+    }
+}
