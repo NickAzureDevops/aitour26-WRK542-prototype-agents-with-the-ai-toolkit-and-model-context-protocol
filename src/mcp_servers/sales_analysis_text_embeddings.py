@@ -40,7 +40,9 @@ class SemanticSearchTextEmbedding:
         self.endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
         self.api_key = os.getenv("AZURE_OPENAI_KEY")
         self.model_name = "text-embedding-3-small"
-        self.deployment = os.getenv("EMBEDDING_MODEL_DEPLOYMENT_NAME", "text-embedding-3-small")
+        self.deployment = os.getenv(
+            "EMBEDDING_MODEL_DEPLOYMENT_NAME", "text-embedding-3-small"
+        )
 
         # Check if Azure OpenAI endpoint and key are configured
         if self.endpoint == "<ENDPOINT_URL>" or not self.api_key:
@@ -60,10 +62,9 @@ class SemanticSearchTextEmbedding:
     def _load_environment(self) -> None:
         """Load environment variables from .env files."""
         script_dir = Path(__file__).parent
-        # Try to load .env from script directory first, then parent directories
+        # Try to load .env from parent directory first, then other locations
         env_paths = [
-            script_dir / ".env",
-            script_dir.parent.parent / ".." / "workshop" / ".env",  # Up to workspace root
+            script_dir.parent / ".env"  # Parent folder
         ]
 
         for env_path in env_paths:
@@ -95,14 +96,18 @@ class SemanticSearchTextEmbedding:
             List of float values representing the embedding, or None if failed
         """
         if not self.openai_client:
-            logger.error("Azure OpenAI client not initialized. Cannot generate embeddings.")
+            logger.error(
+                "Azure OpenAI client not initialized. Cannot generate embeddings."
+            )
             return None
 
         try:
             logger.info("Generating embedding for query: '%s'", query_text)
 
             # Generate embedding using Azure OpenAI
-            response = self.openai_client.embeddings.create(input=[query_text], model=self.deployment)
+            response = self.openai_client.embeddings.create(
+                input=[query_text], model=self.deployment
+            )
 
             # Extract embedding from response
             embedding = response.data[0].embedding

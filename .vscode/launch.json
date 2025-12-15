@@ -1,0 +1,48 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "MCP Server: Sales Analysis (8004)",
+			"type": "debugpy",
+			"request": "launch",
+			"module": "mcp_servers.sales_analysis",
+			"console": "integratedTerminal",
+			"consoleName": "MCP Server: Sales Analysis (8004)",
+			"cwd": "${workspaceFolder}",
+			"env": {
+				"PYTHONPATH": "${workspaceFolder}/src",
+				"PORT": "8004"
+			},
+			"envFile": "${workspaceFolder}/src/python/workshop/.env"
+		},
+		{
+			"name": "MCP Server: Inventory (8005)",
+			"type": "debugpy",
+			"request": "launch",
+			"module": "mcp_servers.inventory_server",
+			"console": "integratedTerminal",
+			"consoleName": "MCP Server: Inventory (8005)",
+			"cwd": "${workspaceFolder}",
+			"env": {
+				"PYTHONPATH": "${workspaceFolder}/src",
+				"PORT": "8005"
+			},
+			"envFile": "${workspaceFolder}/src/python/workshop/.env"
+		}
+	],
+	"compounds": [
+		{
+			"name": "All MCP Servers (F5)",
+			"configurations": [
+				"MCP Server: Sales Analysis (8004)",
+				"MCP Server: Inventory (8005)"
+			],
+			"stopAll": true,
+			"presentation": {
+				"hidden": false,
+				"group": "mcp-servers",
+				"order": 1
+			}
+		}
+	]
+}

@@ -9,22 +9,22 @@ This MCP server provides inventory management tools:
 Uses SQLite database with read-write access for inventory transfers.
 """
 
-from opentelemetry.instrumentation.auto_instrumentation import initialize
-
-initialize()
 import logging
 import os
 from contextlib import asynccontextmanager
 from typing import Annotated, AsyncIterator
 
 from fastmcp import FastMCP
+from opentelemetry.instrumentation.auto_instrumentation import initialize
 from opentelemetry.instrumentation.mcp import McpInstrumentor
 from pydantic import Field
-from sqlalchemy import and_, select, update
+from sqlalchemy import and_, select
 from starlette.requests import Request
 from starlette.responses import JSONResponse, Response
 from zava_shop_shared.inventory_sqlite import InventorySQLiteProvider
 from zava_shop_shared.models.sqlite import Inventory, Product, Store
+
+initialize()
 
 McpInstrumentor().instrument()
 
@@ -60,7 +60,9 @@ async def health_check(request: Request) -> Response:
 
 @mcp.tool()
 async def get_stock_level_by_product_id(
-    product_id: Annotated[int, Field(description="Product ID to check stock levels for")],
+    product_id: Annotated[
+        int, Field(description="Product ID to check stock levels for")
+    ],
     is_online: Annotated[
         bool | None,
         Field(
@@ -81,7 +83,9 @@ async def get_stock_level_by_product_id(
         List of inventory records including 'store_id', 'product_id', 'stock_level', 'store_name', 'is_online', 'product_name', and 'sku'.
     """
     try:
-        logger.info(f"Getting stock levels for product ID: {product_id}, is_online filter: {is_online}")
+        logger.info(
+            f"Getting stock levels for product ID: {product_id}, is_online filter: {is_online}"
+        )
 
         async with db.get_session() as session:
             # Query inventory with store and product information
@@ -115,7 +119,9 @@ async def get_stock_level_by_product_id(
 
             inventory_list = [dict(row) for row in rows]
 
-            logger.info(f"Found inventory at {len(inventory_list)} store(s) for product ID: {product_id}")
+            logger.info(
+                f"Found inventory at {len(inventory_list)} store(s) for product ID: {product_id}"
+            )
             return inventory_list
 
     except Exception as e:
