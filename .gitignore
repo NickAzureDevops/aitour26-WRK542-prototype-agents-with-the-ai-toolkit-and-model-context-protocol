@@ -426,3 +426,4 @@ FodyWeavers.xsd
 
 # MkDocs build output
 site/
+.DS_Store
