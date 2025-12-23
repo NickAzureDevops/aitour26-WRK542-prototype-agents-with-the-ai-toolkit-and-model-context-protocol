@@ -37,7 +37,7 @@ By the end of this session, learners will be able to:
 Before deploying this project, ensure you have:
 
 - An active [Azure subscription](https://azure.microsoft.com/free/)
-- [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) installed and configured
+- [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli) installed and configured
 - [Python 3.11+](https://www.python.org/downloads/) installed
 - [Git](https://git-scm.com/downloads) installed
 - [Visual Studio Code](https://code.visualstudio.com/) with the [AI Toolkit extension](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
@@ -117,9 +117,10 @@ The file should contain:
 - `PROJECT_ENDPOINT`: Your Azure AI Foundry project endpoint
 - `AZURE_OPENAI_ENDPOINT`: Your Azure OpenAI endpoint
 - `AZURE_OPENAI_KEY`: Your Azure OpenAI API key
-- `GPT_MODEL_DEPLOYMENT_NAME`: "gpt-4o"
-- `EMBEDDING_MODEL_DEPLOYMENT_NAME`: "text-embedding-3-small"
+- `GPT_MODEL_DEPLOYMENT_NAME`: Model deployment name (gpt-4o)
+- `EMBEDDING_MODEL_DEPLOYMENT_NAME`: Embedding model deployment name (text-embedding-3-small)
 - `APPLICATIONINSIGHTS_CONNECTION_STRING`: Application Insights connection string
+- `AZURE_TRACING_GEN_AI_CONTENT_RECORDING_ENABLED`: Enable AI tracing (true)
 
 #### Step 5: Open in VS Code
 
