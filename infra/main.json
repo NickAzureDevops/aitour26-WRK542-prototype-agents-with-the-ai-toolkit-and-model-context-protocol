@@ -390,7 +390,7 @@
             "aiProjectDescription": {
               "type": "string",
               "metadata": {
-                "description": "Description of your Azure AI resource dispayed in Azure AI Foundry"
+                "description": "Description of your Azure AI resource displayed in Azure AI Foundry"
               }
             },
             "location": {
