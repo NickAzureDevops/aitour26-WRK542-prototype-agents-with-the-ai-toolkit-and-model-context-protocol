@@ -49,6 +49,8 @@ git clone https://github.com/NickAzureDevops/aitour26-WRK542-prototype-agents-wi
 cd aitour26-WRK542-prototype-agents-with-the-ai-toolkit-and-model-context-protocol
 ```
 
+> **Note:** If you've forked this repository, replace the URL with your fork's URL.
+
 #### Step 2: Deploy Azure Infrastructure
 
 The project includes automated deployment scripts to provision the required Azure resources:
@@ -143,12 +145,19 @@ Follow the instructions in the [src/readme.md](./src/readme.md) file for specifi
 
 To remove all deployed Azure resources:
 
-```bash
-cd infra
-az group delete --name rg-zava-agent-wks-<your-unique-suffix> --yes --no-wait
-```
+1. **Find your resource group name** in the `src/resources.txt` file created during deployment, or list your resource groups:
+   ```bash
+   cat src/resources.txt
+   # Or list all resource groups with 'zava-agent-wks' in the name
+   az group list --query "[?contains(name, 'zava-agent-wks')].name" -o table
+   ```
 
-> **Important:** Replace `<your-unique-suffix>` with the suffix generated during deployment. You can find the resource group name in `src/resources.txt`.
+2. **Delete the resource group** (replace with your actual resource group name):
+   ```bash
+   az group delete --name rg-zava-agent-wks-<your-unique-suffix> --yes --no-wait
+   ```
+
+> **Tip:** The resource group name follows the pattern `rg-zava-agent-wks-XXXX` where XXXX is a randomly generated 4-character suffix.
 
 ### 🔗 Session Resources
 | Resources          | Links                             | Description        |
