@@ -30,6 +30,125 @@ By the end of this session, learners will be able to:
 1. [Microsoft Foundry Models](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/foundry-models-overview)
 1. [MCP - Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro)
 
+### 🚀 Deployment Instructions
+
+#### Prerequisites
+
+Before deploying this project, ensure you have:
+
+- An active [Azure subscription](https://azure.microsoft.com/free/)
+- [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) installed and configured
+- [Python 3.11+](https://www.python.org/downloads/) installed
+- [Git](https://git-scm.com/downloads) installed
+- [Visual Studio Code](https://code.visualstudio.com/) with the [AI Toolkit extension](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
+
+#### Step 1: Clone the Repository
+
+```bash
+git clone https://github.com/NickAzureDevops/aitour26-WRK542-prototype-agents-with-the-ai-toolkit-and-model-context-protocol.git
+cd aitour26-WRK542-prototype-agents-with-the-ai-toolkit-and-model-context-protocol
+```
+
+#### Step 2: Deploy Azure Infrastructure
+
+The project includes automated deployment scripts to provision the required Azure resources:
+
+1. **Sign in to Azure:**
+   ```bash
+   az login
+   ```
+
+2. **Set your active subscription** (if you have multiple):
+   ```bash
+   az account set --subscription "<your-subscription-id>"
+   ```
+
+3. **Deploy the infrastructure:**
+   ```bash
+   cd infra
+   ./deploy.sh
+   ```
+
+   The deployment script will:
+   - Create a resource group with a unique suffix
+   - Deploy Azure AI Foundry hub and project
+   - Deploy GPT-4o and text-embedding-3-small models
+   - Set up Application Insights for monitoring
+   - Create a `.env` file in the `src/` directory with all necessary credentials
+   - Assign required Azure roles to your account
+
+   > **Note:** The deployment may take 10-15 minutes to complete.
+
+#### Step 3: Set Up Python Environment
+
+1. **Create and activate a virtual environment:**
+
+   On macOS/Linux:
+   ```bash
+   python -m venv .venv
+   source .venv/bin/activate
+   ```
+
+   On Windows:
+   ```powershell
+   python -m venv .venv
+   .venv\Scripts\activate
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   pip install -r requirements.lock.txt
+   ```
+
+3. **Install the shared package:**
+   ```bash
+   pip install -e ./shared
+   ```
+
+#### Step 4: Verify Configuration
+
+After deployment, verify that the `.env` file was created:
+
+```bash
+cat src/.env
+```
+
+The file should contain:
+- `PROJECT_ENDPOINT`: Your Azure AI Foundry project endpoint
+- `AZURE_OPENAI_ENDPOINT`: Your Azure OpenAI endpoint
+- `AZURE_OPENAI_KEY`: Your Azure OpenAI API key
+- `GPT_MODEL_DEPLOYMENT_NAME`: "gpt-4o"
+- `EMBEDDING_MODEL_DEPLOYMENT_NAME`: "text-embedding-3-small"
+- `APPLICATIONINSIGHTS_CONNECTION_STRING`: Application Insights connection string
+
+#### Step 5: Open in VS Code
+
+Open the project in Visual Studio Code and authenticate with Azure:
+
+```bash
+code .
+```
+
+1. Install the AI Toolkit extension if not already installed
+2. Click on the Microsoft Foundry icon in the sidebar
+3. Sign in to Azure when prompted
+4. Select your AI Foundry project
+
+#### Running the Application
+
+Follow the instructions in the [src/readme.md](./src/readme.md) file for specific guidance on running MCP servers and the agent application.
+
+#### Cleanup
+
+To remove all deployed Azure resources:
+
+```bash
+cd infra
+az group delete --name rg-zava-agent-wks-<your-unique-suffix> --yes --no-wait
+```
+
+> **Important:** Replace `<your-unique-suffix>` with the suffix generated during deployment. You can find the resource group name in `src/resources.txt`.
+
 ### 🔗 Session Resources
 | Resources          | Links                             | Description        |
 |:-------------------|:----------------------------------|:-------------------|
