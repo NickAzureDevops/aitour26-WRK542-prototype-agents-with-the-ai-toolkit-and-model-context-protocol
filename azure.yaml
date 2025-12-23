@@ -1,18 +1,38 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
 
+# ============================================================================
+# Azure Developer CLI (azd) Configuration
+# ============================================================================
+# This file configures Azure Developer CLI for deploying AI Foundry resources
+#
+# Quick Start:
+#   1. azd init          - Initialize environment
+#   2. azd provision     - Deploy Azure resources
+#   3. azd down          - Delete resources when done
+#
+# Configuration:
+#   azd env set AZURE_LOCATION "eastus"
+#   azd env set AZURE_RESOURCE_PREFIX "my-workshop"
+#
+# Documentation: See DEPLOYMENT.md for detailed instructions
+# ============================================================================
+
 name: aitour26-wrk542-agents
 metadata:
   template: aitour26-wrk542-agents@0.0.1-beta
 
-# Services are not applicable for this infrastructure-only project
-# This project focuses on deploying Azure AI Foundry resources
+# This is an infrastructure-only project
+# No application services to deploy - only Azure AI Foundry resources
 
 infra:
   provider: bicep
   path: infra
   module: main
 
+# Hooks are executed during deployment lifecycle
+# postprovision.sh creates .env file with connection details
+
 # Pipeline configuration for CI/CD
-# Uncomment to enable pipeline deployment
+# Uncomment to enable Azure DevOps pipeline deployment
 # pipeline:
 #   provider: azdo
