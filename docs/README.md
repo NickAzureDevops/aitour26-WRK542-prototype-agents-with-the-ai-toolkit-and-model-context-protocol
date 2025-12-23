@@ -2,8 +2,18 @@
 
 ## Introduction
 
+Welcome to the WRK542 workshop documentation! This workshop teaches you how to build conversational AI agents using the AI Toolkit, Microsoft Foundry, and Model Context Protocol (MCP).
 
+## 📚 Documentation
 
+**👉 [Start with the Documentation Index](INDEX.md)** - Complete guide to all documentation
+
+### Quick Links
+
+- **[Quick Start Guide](QUICKSTART.md)** - Get started in 5 minutes
+- **[Deployment Guide](../DEPLOYMENT.md)** - Comprehensive deployment instructions
+- **[Deployment Comparison](DEPLOYMENT-COMPARISON.md)** - Choose your deployment method
+- **[CI/CD Setup](CICD-SETUP.md)** - Automated deployment pipelines
 
 ## View docs in your browser
 

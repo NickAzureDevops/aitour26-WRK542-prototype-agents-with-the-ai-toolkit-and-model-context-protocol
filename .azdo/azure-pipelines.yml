@@ -1,0 +1,100 @@
+trigger:
+  branches:
+    include:
+    - main
+  paths:
+    include:
+    - infra/*
+    - azure.yaml
+    - .azdo/*
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  - group: azure-foundry-vars  # Variable group containing secrets
+  - name: azureServiceConnection
+    value: 'azure-foundry-service-connection'  # Update with your service connection name
+
+stages:
+- stage: Provision
+  displayName: 'Provision Azure Resources'
+  jobs:
+  - job: Deploy
+    displayName: 'Deploy Infrastructure'
+    steps:
+    - task: AzureCLI@2
+      displayName: 'Install Azure Developer CLI'
+      inputs:
+        azureSubscription: $(azureServiceConnection)
+        scriptType: 'bash'
+        scriptLocation: 'inlineScript'
+        inlineScript: |
+          curl -fsSL https://aka.ms/install-azd.sh | bash
+          export PATH=$PATH:$HOME/.azd/bin
+          azd version
+
+    - task: AzureCLI@2
+      displayName: 'Azure Developer CLI Provision'
+      inputs:
+        azureSubscription: $(azureServiceConnection)
+        scriptType: 'bash'
+        scriptLocation: 'inlineScript'
+        inlineScript: |
+          export PATH=$PATH:$HOME/.azd/bin
+          
+          # Initialize azd with environment
+          azd init --environment $(AZURE_ENV_NAME) --location $(AZURE_LOCATION) --subscription $(AZURE_SUBSCRIPTION_ID)
+          
+          # Provision resources
+          azd provision --no-prompt
+          
+          # Get outputs
+          echo "##vso[task.setvariable variable=resourceGroupName;isOutput=true]$(azd env get-value resourceGroupName)"
+          echo "##vso[task.setvariable variable=aiProjectName;isOutput=true]$(azd env get-value aiProjectName)"
+          echo "##vso[task.setvariable variable=aiFoundryName;isOutput=true]$(azd env get-value aiFoundryName)"
+        addSpnToEnvironment: true
+      env:
+        AZURE_ENV_NAME: $(AZURE_ENV_NAME)
+        AZURE_LOCATION: $(AZURE_LOCATION)
+        AZURE_SUBSCRIPTION_ID: $(AZURE_SUBSCRIPTION_ID)
+
+    - task: PowerShell@2
+      displayName: 'Display Deployment Summary'
+      inputs:
+        targetType: 'inline'
+        script: |
+          Write-Host "##[section]Deployment Complete!"
+          Write-Host "Resource Group: $(resourceGroupName)"
+          Write-Host "AI Project: $(aiProjectName)"
+          Write-Host "AI Foundry: $(aiFoundryName)"
+
+- stage: Validate
+  displayName: 'Validate Deployment'
+  dependsOn: Provision
+  condition: succeeded()
+  jobs:
+  - job: Validate
+    displayName: 'Run Validation Tests'
+    steps:
+    - task: UsePythonVersion@0
+      inputs:
+        versionSpec: '3.11'
+        addToPath: true
+
+    - task: Bash@3
+      displayName: 'Install Python Dependencies'
+      inputs:
+        targetType: 'inline'
+        script: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.lock.txt
+
+    - task: Bash@3
+      displayName: 'Run Tests'
+      inputs:
+        targetType: 'inline'
+        script: |
+          cd src
+          python -m pytest tests/ -v
+      continueOnError: true

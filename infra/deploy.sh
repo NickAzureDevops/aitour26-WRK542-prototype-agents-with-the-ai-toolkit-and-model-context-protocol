@@ -1,5 +1,34 @@
 #!/bin/bash
 
+# ====================================================================
+# DEPRECATION NOTICE
+# ====================================================================
+# This script is being phased out in favor of Azure Developer CLI (azd)
+# 
+# RECOMMENDED: Use 'azd provision' instead
+#
+# Why migrate to azd?
+# - Standardized deployment approach
+# - Better environment management
+# - Built-in CI/CD integration
+# - Easier cleanup with 'azd down'
+#
+# Migration guide:
+# 1. Install azd: curl -fsSL https://aka.ms/install-azd.sh | bash
+# 2. Run: azd init
+# 3. Run: azd provision
+#
+# See DEPLOYMENT.md for detailed instructions
+# ====================================================================
+
+echo "⚠️  DEPRECATION NOTICE: This script is being replaced by Azure Developer CLI (azd)"
+echo "   Recommended: Use 'azd provision' for better deployment management"
+echo "   See DEPLOYMENT.md for migration instructions"
+echo ""
+echo "Continuing with legacy deployment in 5 seconds... (Ctrl+C to cancel)"
+sleep 5
+echo ""
+
 echo "Deploying the Azure resources..."
 
 # Define resource group parameters
