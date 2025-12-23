@@ -1,0 +1,58 @@
+name: Deploy Azure AI Foundry Resources
+
+on:
+  workflow_dispatch:  # Manual trigger
+  push:
+    branches:
+      - main
+    paths:
+      - 'infra/**'
+      - 'azure.yaml'
+      - '.github/workflows/azure-deploy.yml'
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  AZURE_ENV_NAME: ${{ secrets.AZURE_ENV_NAME }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Install Azure Developer CLI
+      uses: Azure/setup-azd@v1.0.0
+
+    - name: Log in to Azure
+      uses: azure/login@v2
+      with:
+        client-id: ${{ secrets.AZURE_CLIENT_ID }}
+        tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+        subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+    - name: Provision Infrastructure
+      run: azd provision --no-prompt
+      env:
+        AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+        AZURE_LOCATION: ${{ secrets.AZURE_LOCATION }}
+
+    - name: Get Deployment Outputs
+      id: outputs
+      run: |
+        echo "resource-group=$(azd env get-value resourceGroupName)" >> $GITHUB_OUTPUT
+        echo "ai-project=$(azd env get-value aiProjectName)" >> $GITHUB_OUTPUT
+        echo "ai-foundry=$(azd env get-value aiFoundryName)" >> $GITHUB_OUTPUT
+
+    - name: Display Deployment Summary
+      run: |
+        echo "## Deployment Complete! 🎉" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### Deployed Resources" >> $GITHUB_STEP_SUMMARY
+        echo "- **Resource Group**: ${{ steps.outputs.outputs.resource-group }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **AI Project**: ${{ steps.outputs.outputs.ai-project }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **AI Foundry**: ${{ steps.outputs.outputs.ai-foundry }}" >> $GITHUB_STEP_SUMMARY
