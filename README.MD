@@ -148,8 +148,8 @@ To remove all deployed Azure resources:
 1. **Find your resource group name** in the `src/resources.txt` file created during deployment, or list your resource groups:
    ```bash
    cat src/resources.txt
-   # Or list all resource groups with 'zava-agent-wks' in the name
-   az group list --query "[?contains(name, 'zava-agent-wks')].name" -o table
+   # Or list all resource groups matching the naming pattern
+   az group list --query "[?contains(name, 'rg-zava-agent-wks')].name" -o table
    ```
 
 2. **Delete the resource group** (replace with your actual resource group name):
