@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
+
+name: aitour26-wrk542-agents
+metadata:
+  template: aitour26-wrk542-agents@0.0.1-beta
+
+# Services are not applicable for this infrastructure-only project
+# This project focuses on deploying Azure AI Foundry resources
+
+infra:
+  provider: bicep
+  path: infra
+  module: main
+
+# Pipeline configuration for CI/CD
+# Uncomment to enable pipeline deployment
+# pipeline:
+#   provider: azdo
