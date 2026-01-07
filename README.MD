@@ -175,6 +175,82 @@ To remove all deployed Azure resources:
 
 *Coming soon*
 
+## 🚀 Getting Started
+
+### Prerequisites
+
+- [Azure Subscription](https://azure.microsoft.com/free/)
+- [Azure Developer CLI (azd)](https://learn.microsoft.com/azure/developer/azure-developer-cli/install-azd)
+- [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)
+- [Python 3.11+](https://www.python.org/downloads/)
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [AI Toolkit for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
+
+### 📦 Deployment
+
+This project uses the [Azure Developer CLI (azd)](https://learn.microsoft.com/azure/developer/azure-developer-cli/overview) for simplified deployment.
+
+#### Deploy with Azure Developer CLI (Recommended)
+
+1. **Install Azure Developer CLI**
+   ```bash
+   # Windows (PowerShell)
+   powershell -ex AllSigned -c "Invoke-RestMethod 'https://aka.ms/install-azd.ps1' | Invoke-Expression"
+
+   # Linux/MacOS
+   curl -fsSL https://aka.ms/install-azd.sh | bash
+   ```
+
+2. **Login to Azure**
+   ```bash
+   azd auth login
+   az login
+   ```
+
+3. **Initialize and provision resources**
+   ```bash
+   # Initialize the environment (first time only)
+   azd init
+
+   # Provision Azure resources
+   azd provision
+   ```
+
+   The `azd provision` command will:
+   - Deploy Azure AI Foundry resources
+   - Deploy Azure OpenAI models (GPT-4o, text-embedding-3-small)
+   - Configure Application Insights for monitoring
+   - Automatically create `.env` file in the `src/` directory with connection details
+
+4. **Verify deployment**
+   After deployment completes, check:
+   - `src/.env` - Contains your Azure connection strings and keys
+   - `src/resources.txt` - Lists all deployed Azure resources
+
+#### Alternative: Deploy with Bash Script
+
+If you prefer the traditional approach, you can use the deployment script:
+
+```bash
+cd infra
+./deploy.sh
+```
+
+> **Note**: The Azure Developer CLI method is recommended as it provides better environment management and integrates with Azure DevOps/GitHub Actions for CI/CD.
+
+### 🧹 Cleanup Resources
+
+To delete all Azure resources when you're done:
+
+```bash
+azd down
+```
+
+Or delete the resource group manually:
+```bash
+az group delete --name <resource-group-name>
+```
+
 ## Content Owners
 
 <!-- TODO: Add yourself as a content owner
